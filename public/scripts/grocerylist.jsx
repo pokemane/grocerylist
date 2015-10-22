@@ -26,7 +26,7 @@ var GroceryList = React.createClass({
 		});
 		return(
 			<div className="groceryList">
-				{groceryNodes}
+			  {groceryNodes}
 			</div>
 		);
 	}
