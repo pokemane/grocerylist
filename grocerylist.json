@@ -1,0 +1,17 @@
+[
+ {
+  "name": "soup",
+  "price": "0.99",
+  "comment": "I like soup"
+ },
+ {
+  "name": "nutella",
+  "price": "9.99",
+  "comment": "I like nutella!!!"
+ },
+ {
+  "name": "carrots",
+  "price": "3",
+  "comment": "carrots though"
+ }
+]
