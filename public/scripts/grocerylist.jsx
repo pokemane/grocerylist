@@ -37,7 +37,7 @@ var GroceryForm = React.createClass({
   e.preventDefault();
   var name = this.refs.name.value.trim();
   var comment = this.refs.comment.value.trim();
-  var price = this.refs.price.value();
+  var price = this.refs.price.value.trim();
   if (!name || !price){
    return;
   }
@@ -89,7 +89,7 @@ var GroceryBox = React.createClass({
     this.setState({data: data});
    }.bind(this),
    error: function(xhr, status, err){
-    console.error(this.props.url, stats, err.toString());
+    console.error(this.props.url, status, err.toString());
    }.bind(this)
   });
  },
@@ -102,13 +102,32 @@ var GroceryBox = React.createClass({
    <div className="groceryBox">
     <h1>Groceries</h1>
     <GroceryList data={this.state.data} />
-    <GroceryBox onGrocerySubmit={this.handleGrocerySubmit} />
+    <GroceryForm onGrocerySubmit={this.handleGrocerySubmit} />
    </div>
   );
  }
 });
 
+var data = [
+ {
+  "name": "soup",
+  "price": "0.99",
+  "comment": "I like soup"
+ },
+ {
+  "name": "nutella",
+  "price": "9.99",
+  "comment": "I like nutella!!!"
+ },
+ {
+  "name": "carrots",
+  "price": "3",
+  "comment": "carrots though"
+ }
+];
+
 ReactDOM.render(
  <GroceryBox url="/api/grocerylist" pollInterval={2000} />,
+ //<GroceryList data={data} />,
  document.getElementById('content')
 );
