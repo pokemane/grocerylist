@@ -5,12 +5,12 @@ var Grocery = React.createClass({
   },
  render: function(){
   return(
-   <div className="grocery">
+   <li className="grocery">
     <h2 className="groceryName">
      {this.props.name + ": $" + this.props.price}
     </h2>
     <span dangerouslySetInnerHTML={this.rawMarkup()} />
-   </div>
+   </li>
   );
  }
 });
@@ -25,9 +25,9 @@ var GroceryList = React.createClass({
    );
   });
   return(
-   <div className="groceryList">
+   <ul className="groceryList">
      {groceryNodes}
-   </div>
+   </ul>
   );
  }
 });
@@ -107,24 +107,6 @@ var GroceryBox = React.createClass({
   );
  }
 });
-
-var data = [
- {
-  "name": "soup",
-  "price": "0.99",
-  "comment": "I like soup"
- },
- {
-  "name": "nutella",
-  "price": "9.99",
-  "comment": "I like nutella!!!"
- },
- {
-  "name": "carrots",
-  "price": "3",
-  "comment": "carrots though"
- }
-];
 
 ReactDOM.render(
  <GroceryBox url="/api/grocerylist" pollInterval={2000} />,

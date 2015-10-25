@@ -4,6 +4,9 @@
   "description": "Grocery list made using React",
   "dependencies": {
     "body-parser": "^1.14.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "react": "^0.14.0",
+    "react-drag": "^0.1.5",
+    "react-reorderable": "^0.1.10"
   }
 }
