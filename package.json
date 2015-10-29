@@ -6,7 +6,10 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "react": "^0.14.0",
-    "react-drag": "^0.1.5",
-    "react-reorderable": "^0.1.10"
+    "react-bootstrap": "^0.27.2",
+    "react-dom": "^0.14.0",
+    "react-draggable": "^0.8.5",
+    "react-reorderable": "^0.1.10",
+    "react-tap-event-plugin": "^0.2.1"
   }
 }

@@ -9,6 +9,7 @@ var GROCERYLIST_FILE = path.join(__dirname, 'grocerylist.json');
 app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/react-bootstrap', express.static(path.join(__dirname, 'node_modules/react-bootstrap')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

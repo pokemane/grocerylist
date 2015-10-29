@@ -1,7 +1,4 @@
-import React from 'react';
-import ReactReorderable from 'react-reorderable';
-
-React.render(
+ReactDOM.render(
  <ReactReorderable>
    <div>1</div>
    <div>2</div>

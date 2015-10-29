@@ -1,3 +1,8 @@
+var ListGroupItem = ReactBootstrap.ListGroupItem;
+var ListGroup = ReactBootstrap.ListGroup;
+var Input = ReactBootstrap.Input;
+var ButtonInput = ReactBootstrap.ButtonInput;
+
 var Grocery = React.createClass({
  rawMarkup: function() {
     var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
@@ -5,12 +10,9 @@ var Grocery = React.createClass({
   },
  render: function(){
   return(
-   <li className="grocery">
-    <h2 className="groceryName">
-     {this.props.name + ": $" + this.props.price}
-    </h2>
+   <ListGroupItem className="grocery" header={this.props.name + ": $" + this.props.price}>
     <span dangerouslySetInnerHTML={this.rawMarkup()} />
-   </li>
+   </ListGroupItem>
   );
  }
 });
@@ -25,9 +27,9 @@ var GroceryList = React.createClass({
    );
   });
   return(
-   <ul className="groceryList">
+   <ListGroup className="groceryList">
      {groceryNodes}
-   </ul>
+   </ListGroup>
   );
  }
 });
@@ -50,10 +52,10 @@ var GroceryForm = React.createClass({
  render: function(){
   return(
    <form className="groceryForm" onSubmit={this.handleSubmit}>
-    <input type="text" placeholder="Grocery item" ref="name"/>
-    <input type="number" placeholder="0.00" min="0.01" step="0.01" ref="price"/>
-    <input type="text" placeholder="additional comments about this item" ref="comment"/>
-    <input type="submit" value="Add item" />
+    <Input type="text" label="Grocery Item" placeholder="Grocery item" ref="name"/>
+    <Input type="number" label="Price" placeholder="0.00" min="0.01" step="0.01" ref="price"/>
+    <Input type="text" label="Comments" placeholder="additional comments about this item" ref="comment"/>
+    <ButtonInput type="submit" value="Add item" />
    </form>
   );
  }
